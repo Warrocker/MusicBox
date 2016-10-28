@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MusicBox</string>
+    <string name="cover">cover</string>
+    <string name="play_button">Play Button</string>
+</resources>

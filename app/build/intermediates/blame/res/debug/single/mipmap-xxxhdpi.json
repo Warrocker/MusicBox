@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher.png",
+        "source": "/home/warrocker/MBox/MusicBox/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/vinyl.png",
+        "source": "/home/warrocker/MBox/MusicBox/app/src/main/res/mipmap-xxxhdpi/vinyl.png"
+    }
+]

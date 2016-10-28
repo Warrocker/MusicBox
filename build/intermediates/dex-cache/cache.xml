@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-24.2.1_bfd63a3e3a10305011db9db338e443ecd7c8e1ee/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_75b1cfb95d280a8169030d94d2dbce3db464c072/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/warrocker/MBox/MusicBox/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="7535c2470703b71b3f554d76d4b3558d8e0c4a50">
+        <dex dex="/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_bbc5a4e0d6b942171c064b47b765bdeb9fa2600f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_7cd1ea6f488371b57ac4104eeb9e34b431833fc9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/warrocker/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_56c18cf9492c1e05e98d49f144b4fedf818b7e5e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_dd98131dcf0fd7cb5a2701eb0dabe64fb1792d39/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_5c9d06a39d8a1d5f8bcc29e7ed6b24a62752ff5d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.2.1_2efbaa8fa2a2b5c1ae6a4340c1999529e35cfc7f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_3176890dbb810d48addb88af64dbd95e186555be/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_2694702c4eacb5a04d8612420254f23c9d3bc900/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_ebfe836007ee038aae5a4e281ac1b88c2ac5a313/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_62635dd337cbda3de56d4c1c416d21a3ccfe64b2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_cfdd63163436591c7de2efa406fc52fc4b1c3d30/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/warrocker/MBox/MusicBox/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="b94e64238b81c81b43796f8d9f9ed9d699c3b697">
+        <dex dex="/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_7a99d7c11d700ab6b7c533fff9050b9aac4fb500/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_6c6f2f099ede3c0f1771c9fd39b06d41775c665f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_8517a330528c15e0581ed254991b453836d232bd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_ab5f7bd5e8247e9b9f2521c0769c3bb58686f8cd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_3bc157f32ae80c985a1e2ed8440d911893f9828e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_f9f585e2b5acb2e05f16046911183a134def14ca/classes.dex" />
+    </item>
+
+</items>

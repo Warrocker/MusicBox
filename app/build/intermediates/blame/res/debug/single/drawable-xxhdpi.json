@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_previous.png",
+        "source": "/home/warrocker/MBox/MusicBox/app/src/main/res/drawable-xxhdpi/ic_previous.png"
+    },
+    {
+        "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_next.png",
+        "source": "/home/warrocker/MBox/MusicBox/app/src/main/res/drawable-xxhdpi/ic_next.png"
+    },
+    {
+        "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_pause.png",
+        "source": "/home/warrocker/MBox/MusicBox/app/src/main/res/drawable-xxhdpi/ic_pause.png"
+    },
+    {
+        "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_play.png",
+        "source": "/home/warrocker/MBox/MusicBox/app/src/main/res/drawable-xxhdpi/ic_play.png"
+    },
+    {
+        "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_action_name.png",
+        "source": "/home/warrocker/MBox/MusicBox/app/src/main/res/drawable-xxhdpi/ic_action_name.png"
+    }
+]

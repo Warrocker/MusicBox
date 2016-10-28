@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    tools:context=".ShowFilesActivity">
+    <fragment class="warrocker.musicbox.FilesFragment"
+        android:id="@+id/activity_show_files" android:layout_weight="1"
+        android:layout_width="0px" android:layout_height="match_parent"
+        tools:layout="@layout/activity_show_files"
+        />
+
+    <fragment class="warrocker.musicbox.PlayFragment"
+        android:id="@+id/activity_play" android:layout_weight="1"
+        android:layout_width="0px" android:layout_height="match_parent"
+        tools:layout="@layout/activity_play"/>
+</LinearLayout>
