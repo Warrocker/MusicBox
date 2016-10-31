@@ -1,5 +1,8 @@
 package warrocker.musicbox;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
 import android.media.AudioManager;
@@ -19,22 +22,31 @@ import java.io.ObjectInputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+import static warrocker.musicbox.FilesFragment.TARGET_DEVICE;
+
 public class ServerPlayService extends Service {
     public final static byte PLAY_CODE = 1;
     public final static byte PAUSE_CODE = 2;
     public final static byte RESUME_CODE = 3;
-    private static MediaPlayer mediaPlayer;
+    public static MediaPlayer mediaPlayer;
     byte[] byteArray = new byte[8192];
-
+    //path to track
+    public static String EXTERNAL_TRACK_PATH = Environment.getExternalStorageDirectory() + "/Music/Track.mp3";
+    NotificationManager nm;
+    ServerRunnable server;
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
+        boolean threadStatus = intent.getBooleanExtra("THREAD_STATUS", false);
+        server.setThreadStatus(threadStatus);
+        server.notifyThread();
         return null;
     }
 
     @Override
     public void onCreate() {
         super.onCreate();
+        nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         new ServerRunnable();
 
     }
@@ -44,15 +56,16 @@ public class ServerPlayService extends Service {
         return START_STICKY;
     }
     private class ServerRunnable implements Runnable{
-    ServerSocket serverSocket;
-    ServerRunnable(){
-        Thread thread = new Thread(this);
-        thread.start();
-    }
+        ServerSocket serverSocket;
+        Thread thread;
+        boolean threadApplyStatus = false;
+        ServerRunnable(){
+            thread = new Thread(this);
+            thread.start();
+        }
         //Записать файл и начать проигрывать
         private void writeAndPlayFile(BufferedInputStream bufferedInputStream, int seekTime) throws IOException{
-            try(FileOutputStream fos = new FileOutputStream(Environment.getExternalStorageDirectory() + "/Music/Track.mp3")){
-
+            try(FileOutputStream fos = new FileOutputStream(EXTERNAL_TRACK_PATH)){
 
                 int i;
                 while ((i = bufferedInputStream.read(byteArray)) != -1) {
@@ -62,54 +75,68 @@ public class ServerPlayService extends Service {
             mediaPlayer = null;
             mediaPlayer = new MediaPlayer();
             mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-            mediaPlayer.setDataSource(Environment.getExternalStorageDirectory() + "/Music/Track.mp3");
+            mediaPlayer.setDataSource(EXTERNAL_TRACK_PATH);
             mediaPlayer.prepare();
             mediaPlayer.seekTo(seekTime);
             mediaPlayer.start();
+            Intent intent = new Intent(getApplicationContext(), ClientPlayActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
 
         }
-    @Override
-    public void run() {
-        try {
-             serverSocket = new ServerSocket(19000);
+        private void sendNotification(Socket socket){
+            Intent intent = new Intent(ServerPlayService.this, DeviceActivity.class);
+            Notification notif = new Notification.Builder(ServerPlayService.this)
+                    .setTicker("К Вам хотят подключиться")
+                    .setContentTitle("Новое подключение")
+                    .setContentText(
+                            "Разрешить устройству подключиться?")
+                    .setSmallIcon(R.drawable.ic_play)
+                    .setContentIntent(PendingIntent.getActivity(ServerPlayService.this, 0, intent, 0))
+                    .build();
 
-        }catch (IOException e){
-            e.printStackTrace();
+            // ставим флаг, чтобы уведомление пропало после нажатия
+            notif.flags |= Notification.FLAG_AUTO_CANCEL;
+
+            // отправляем
+            nm.notify(1, notif);
         }
-        while (!serverSocket.isClosed()) {
-           try{
-               Socket socket = serverSocket.accept();
-                try (BufferedInputStream bufferedInputStream = new BufferedInputStream(socket.getInputStream())) {
-                    switch (bufferedInputStream.read()) {
-                        case ServerPlayService.PLAY_CODE:
-                            if(mediaPlayer != null) {
-                                if (mediaPlayer.isPlaying()) {
-                                    mediaPlayer.stop();
-                                }
-                            }
-                            int seekTime;
-                            seekTime = readInt(bufferedInputStream);
-                            Log.e("QWE", String.valueOf(seekTime));
-                            writeAndPlayFile(bufferedInputStream, seekTime);
-                            break;
-                        case ServerPlayService.PAUSE_CODE:
-                            if (mediaPlayer.isPlaying()) {
-                                mediaPlayer.stop();
-                            }
-                            break;
-                        case ServerPlayService.RESUME_CODE:
-                            if (mediaPlayer.isPlaying())
-                            //Resume code
-                            break;
-                        default:
-                            break;
+        @Override
+        public void run() {
+            try {
+                serverSocket = new ServerSocket(19000);
+            }catch (IOException e){
+                e.printStackTrace();
+            }
+            while (!serverSocket.isClosed()) {
+                try{
+                    Socket socket = serverSocket.accept();
+                    sendNotification(socket);
+                    while(!socket.isClosed()) {
+                        try {
+                            thread.wait();
+                        } catch (InterruptedException e) {
+                            return;
+                        }
+                        if (threadApplyStatus) {
+                            openSocketStream(socket);
+                        } else {
+                            return;
+                        }
                     }
-                }
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+            }
         }
-    }
+        public void setThreadStatus(boolean status){
+            this.threadApplyStatus = status;
+        }
+        public void notifyThread(){
+            this.thread.notify();
+        }
+
+
         final int readInt(BufferedInputStream bufferedInputStream) throws IOException {
             int ch1 = bufferedInputStream.read();
             int ch2 = bufferedInputStream.read();
@@ -119,5 +146,28 @@ public class ServerPlayService extends Service {
                 throw new EOFException();
             return ((ch1 << 24) + (ch2 << 16) + (ch3 << 8) + (ch4));
         }
-}
+        private void openSocketStream(Socket socket){
+            try (BufferedInputStream bufferedInputStream = new BufferedInputStream(socket.getInputStream())) {
+                switch (bufferedInputStream.read()) {
+                    case ServerPlayService.PLAY_CODE:
+                        if(mediaPlayer != null) {
+                            if (mediaPlayer.isPlaying()) {
+                                mediaPlayer.stop();
+                            }
+                        }
+                        int seekTime;
+                        seekTime = readInt(bufferedInputStream);
+                        writeAndPlayFile(bufferedInputStream, seekTime);
+                        break;
+                    case ServerPlayService.PAUSE_CODE:
+                        if (mediaPlayer.isPlaying()) {
+                            mediaPlayer.stop();
+                        }
+                        break;
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }

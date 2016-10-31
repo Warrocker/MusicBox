@@ -57,11 +57,6 @@ public class DevicesList extends ListFragment {
         devicesAdapter.notifyDataSetChanged();
     }
 
-//    @Override
-//    public void onPause() {
-//        super.onPause();
-//    }
-
     private class DeviceAdapter extends ArrayAdapter<Device> {
         DeviceAdapter(Context context, ArrayList<Device> devices) {
             super(context, R.layout.file_item, devices);
@@ -109,7 +104,6 @@ public class DevicesList extends ListFragment {
         Enumeration<InetAddress> inetAddresses;
         @Override
         protected ArrayList<Device> doInBackground(Void... params) {
-            Log.e("QWE", "STARTDEVICEFIND");
             try {
                 if (NetworkInterface.getByName("wlan0") != null && NetworkInterface.getByName("wlan0").getInetAddresses() != null && NetworkInterface.getByName("wlan0").getInetAddresses().hasMoreElements() && !NetworkInterface.getByName("wlan0").getInetAddresses().nextElement().getHostAddress().equals("0.0.0.0")) {
                     inetAddresses = NetworkInterface.getByName("wlan0").getInetAddresses();

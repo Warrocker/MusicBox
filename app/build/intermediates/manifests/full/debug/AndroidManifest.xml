@@ -28,12 +28,10 @@
 
         <activity
             android:name="warrocker.musicbox.PlayActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar" >
-        </activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name="warrocker.musicbox.ShowFilesActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar" >
-        </activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name="warrocker.musicbox.DeviceActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" >
@@ -42,6 +40,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="warrocker.musicbox.ClientPlayActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" >
         </activity>
     </application>
 
