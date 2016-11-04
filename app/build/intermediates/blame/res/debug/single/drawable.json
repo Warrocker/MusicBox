@@ -4,12 +4,12 @@
         "source": "/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/res/drawable/design_fab_background.xml"
     },
     {
-        "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
-        "source": "/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable/abc_item_background_holo_light.xml"
-    },
-    {
         "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_dark.xml",
         "source": "/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable/abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
+        "source": "/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable/abc_item_background_holo_light.xml"
     },
     {
         "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/drawable/abc_textfield_search_material.xml",
@@ -24,12 +24,12 @@
         "source": "/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable/abc_list_selector_background_transition_holo_light.xml"
     },
     {
-        "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_dark.xml",
-        "source": "/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
-    },
-    {
         "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/drawable/abc_ic_clear_material.xml",
         "source": "/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable/abc_ic_clear_material.xml"
+    },
+    {
+        "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_dark.xml",
+        "source": "/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
     },
     {
         "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_small_material.xml",

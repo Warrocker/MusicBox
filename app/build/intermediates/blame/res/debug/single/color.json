@@ -32,12 +32,12 @@
         "source": "/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/color/abc_primary_text_material_dark.xml"
     },
     {
-        "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/color/abc_tint_spinner.xml",
-        "source": "/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/color/abc_tint_spinner.xml"
-    },
-    {
         "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_dark.xml",
         "source": "/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/color/abc_hint_foreground_material_dark.xml"
+    },
+    {
+        "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/color/abc_tint_spinner.xml",
+        "source": "/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/color/abc_tint_spinner.xml"
     },
     {
         "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_light.xml",

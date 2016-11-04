@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/warrocker/MBox/MusicBox/app/src/main/AndroidManifest.xml:2:1-43:12
+ADDED from /home/warrocker/MBox/MusicBox/app/src/main/AndroidManifest.xml:2:1-46:12
 	package
 		ADDED from /home/warrocker/MBox/MusicBox/app/src/main/AndroidManifest.xml:3:5-33
 		INJECTED from /home/warrocker/MBox/MusicBox/app/src/main/AndroidManifest.xml
@@ -46,7 +46,7 @@ ADDED from /home/warrocker/MBox/MusicBox/app/src/main/AndroidManifest.xml:12:5-8
 	android:name
 		ADDED from /home/warrocker/MBox/MusicBox/app/src/main/AndroidManifest.xml:12:22-77
 application
-ADDED from /home/warrocker/MBox/MusicBox/app/src/main/AndroidManifest.xml:14:5-41:19
+ADDED from /home/warrocker/MBox/MusicBox/app/src/main/AndroidManifest.xml:14:5-44:19
 MERGED from [com.android.support:design:25.0.0] /home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-v4:25.0.0] /home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.0/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-compat:25.0.0] /home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/AndroidManifest.xml:25:5-20
@@ -110,6 +110,12 @@ ADDED from /home/warrocker/MBox/MusicBox/app/src/main/AndroidManifest.xml:38:9-4
 		ADDED from /home/warrocker/MBox/MusicBox/app/src/main/AndroidManifest.xml:39:13-63
 	android:name
 		ADDED from /home/warrocker/MBox/MusicBox/app/src/main/AndroidManifest.xml:38:19-53
+activity#warrocker.musicbox.AlertActivity
+ADDED from /home/warrocker/MBox/MusicBox/app/src/main/AndroidManifest.xml:41:9-43:20
+	android:theme
+		ADDED from /home/warrocker/MBox/MusicBox/app/src/main/AndroidManifest.xml:42:13-63
+	android:name
+		ADDED from /home/warrocker/MBox/MusicBox/app/src/main/AndroidManifest.xml:41:19-48
 uses-sdk
 INJECTED from /home/warrocker/MBox/MusicBox/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:design:25.0.0] /home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/AndroidManifest.xml:21:5-23:62

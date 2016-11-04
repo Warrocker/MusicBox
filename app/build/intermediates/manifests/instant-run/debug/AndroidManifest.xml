@@ -46,6 +46,10 @@
             android:name="warrocker.musicbox.ClientPlayActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" >
         </activity>
+        <activity
+            android:name="warrocker.musicbox.AlertActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>

@@ -21,6 +21,7 @@ import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -183,8 +184,8 @@ public class PlayFragment extends Fragment {
 
         @Override
         public void onClick(View view) {
-            playPauseButton.setImageResource(R.drawable.ic_play);
             new PauseTask().execute(targetDevice);
+            playPauseButton.setImageResource(R.drawable.ic_play);
             playPauseButton.setOnClickListener(playClick);
             isPlaying = false;
         }
@@ -204,9 +205,10 @@ public class PlayFragment extends Fragment {
             new PlayTask().execute(trackPath, targetDevice, String.valueOf(seekBar.getProgress()));
         }
     };
-    class PlayTask extends AsyncTask<String, Void, Void> {
+    class PlayTask extends AsyncTask<String, Void, Boolean> {
         ProgressDialog progress = new ProgressDialog(getActivity());
         private Socket socket;
+
         //Пишем интовое знчение в поток
         final void writeInt(BufferedOutputStream bufferedOutputStream, int v) throws IOException {
             bufferedOutputStream.write((v >>> 24) & 0xFF);
@@ -223,31 +225,39 @@ public class PlayFragment extends Fragment {
             progress.show();
         }
         @Override
-        protected Void doInBackground(String... strings) {
+        protected Boolean doInBackground(String... strings) {
             try {
                 socket = new Socket(strings[1], 19000);
             }catch (IOException e){
                 e.printStackTrace();
+                Toast.makeText(getActivity(), "Невозможно подключиться к устройству", Toast.LENGTH_SHORT).show();
             }
-            try(FileInputStream fileInputStream = new FileInputStream(strings[0]);
-                BufferedOutputStream out = new BufferedOutputStream(socket.getOutputStream())) {
-                byte[] byteArray = new byte[8092];
-                int i;
-                out.write(ServerPlayService.PLAY_CODE);
-                writeInt(out, Integer.parseInt(strings[2]));
-                while ((i = fileInputStream.read(byteArray)) != -1){
-                    out.write(byteArray, 0, i);
+                Log.e("QWEALL", "truee");
+                try (FileInputStream fileInputStream = new FileInputStream(strings[0]);
+                     BufferedOutputStream out = new BufferedOutputStream(socket.getOutputStream())) {
+                    byte[] byteArray = new byte[8092];
+                    int i;
+                    out.write(ServerPlayService.PLAY_CODE);
+                    writeInt(out, Integer.parseInt(strings[2]));
+                    while ((i = fileInputStream.read(byteArray)) != -1) {
+                        out.write(byteArray, 0, i);
+                    }
+                    return true;
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    Log.e("QWEACC", "false1");
+                    return false;
                 }
-            }catch (IOException e){
-                e.printStackTrace();
-            }
-            return null;
         }
         @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
+        protected void onPostExecute(Boolean aBool) {
+            super.onPostExecute(aBool);
             progress.cancel();
-            playTimer.start();
+            if(aBool) {
+                playTimer.start();
+            }else {
+                Toast.makeText(getActivity(), "Неудалось подключиться", Toast.LENGTH_SHORT).show();
+            }
         }
     }
     class PauseTask extends AsyncTask<String, Void, Void> {
@@ -260,13 +270,12 @@ public class PlayFragment extends Fragment {
         protected Void doInBackground(String... strings) {
             try {
                 socket = new Socket(strings[0], 19000);
-            }catch (IOException e){
-                e.printStackTrace();
-            }
             try(BufferedOutputStream out = new BufferedOutputStream(socket.getOutputStream())) {
                 out.write(ServerPlayService.PAUSE_CODE);
+            }
             }catch (IOException e){
                 e.printStackTrace();
+                Toast.makeText(getActivity(), "Неудалось подключиться", Toast.LENGTH_SHORT).show();
             }
             return null;
         }

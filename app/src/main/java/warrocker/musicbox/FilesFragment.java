@@ -16,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -72,6 +73,7 @@ public class FilesFragment extends ListFragment {
                 intent.putExtra("trackPath",item);
                 intent.putStringArrayListExtra("trackList", trackList);
                 startActivity(intent);
+
             }
         }
     private class FileAdapter extends ArrayAdapter<String>{
