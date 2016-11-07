@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".DeviceActivity">
     <fragment
         android:id="@+id/device_fragment_list"
         android:layout_width="match_parent"

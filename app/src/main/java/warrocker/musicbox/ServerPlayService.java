@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Binder;
+import android.os.CountDownTimer;
 import android.os.Environment;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
@@ -35,6 +36,7 @@ public class ServerPlayService extends Service {
     public final static byte ALLOW_CODE = 3;
     public final static byte DENY_CODE = 4;
     public static MediaPlayer mediaPlayer;
+    CountDownTimer pushCountDown;
     byte[] byteArray = new byte[8192];
     //path to track
     public static String EXTERNAL_TRACK_PATH = Environment.getExternalStorageDirectory() + "/Music/Track.mp3";
@@ -63,6 +65,7 @@ public class ServerPlayService extends Service {
     public void onCreate() {
         super.onCreate();
         nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
         serverRunnable = new ServerRunnable();
 
     }
@@ -126,6 +129,17 @@ public class ServerPlayService extends Service {
                             setAllowAccept(false);
                             currentSocket = newSocket;
                             sendNotification();
+                            pushCountDown = new CountDownTimer(15000, 1000) {
+                                @Override
+                                public void onTick(long l) {
+
+                                }
+
+                                @Override
+                                public void onFinish() {
+                                    nm.cancel(1);
+                                }
+                            }.start();
                         }
 
                     } catch (IOException e) {

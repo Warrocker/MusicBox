@@ -9,9 +9,9 @@ public class DeviceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.device_fragment);
         this.startService(new Intent(this, ServerPlayService.class));
         this.startService(new Intent(this, MyNameService.class));
+        setContentView(R.layout.device_fragment);
 
     }
 }

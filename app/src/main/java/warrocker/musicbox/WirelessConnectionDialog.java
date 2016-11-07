@@ -33,6 +33,7 @@ public class WirelessConnectionDialog extends DialogFragment {
             public void onClick(DialogInterface dialog, int id) {
                 WifiManager wifiManager = (WifiManager) getActivity().getSystemService(Context.WIFI_SERVICE);
                 wifiManager.setWifiEnabled(true);
+//                Log.e("QWE", wifiManager.getScanResults().toString());
             }
         });
         builder.setNegativeButton(cancelText, new DialogInterface.OnClickListener() {
