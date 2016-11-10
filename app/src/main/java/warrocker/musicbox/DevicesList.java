@@ -64,7 +64,6 @@ public class DevicesList extends ListFragment {
         @Override
         public View getView(int position, View convertView, @NonNull ViewGroup parent) {
             Device device = getItem(position);
-            Log.e("QWE", device.toString());
             if (convertView == null) {
                 convertView = LayoutInflater.from(getContext())
                         .inflate(R.layout.file_item, parent, false);

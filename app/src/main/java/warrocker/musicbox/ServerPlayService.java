@@ -11,6 +11,7 @@ import android.os.Binder;
 import android.os.CountDownTimer;
 import android.os.Environment;
 import android.os.IBinder;
+import android.os.Looper;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
@@ -33,8 +34,6 @@ import static warrocker.musicbox.FilesFragment.TARGET_DEVICE;
 public class ServerPlayService extends Service {
     public final static byte PLAY_CODE = 1;
     public final static byte PAUSE_CODE = 2;
-    public final static byte ALLOW_CODE = 3;
-    public final static byte DENY_CODE = 4;
     public static MediaPlayer mediaPlayer;
     CountDownTimer pushCountDown;
     byte[] byteArray = new byte[8192];
@@ -42,18 +41,12 @@ public class ServerPlayService extends Service {
     public static String EXTERNAL_TRACK_PATH = Environment.getExternalStorageDirectory() + "/Music/Track.mp3";
     NotificationManager nm;
     ServerRunnable serverRunnable;
+    private final IBinder mBinder = new LocalBinder();
+
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        Log.e("qwe", String.valueOf(intent.getBooleanExtra("ACCESS", true)));
-        if(intent.getBooleanExtra("ACCESS", false)) {
-            new test(serverRunnable.getCurrentSocket());
-            serverRunnable.setAllowAccept(true);
-        }else {
-            serverRunnable.setAllowAccept(true);
-            serverRunnable.setCurrentSocket(null);
-        }
-        return new Binder();
+        return mBinder;
     }
 
     @Override
@@ -67,13 +60,38 @@ public class ServerPlayService extends Service {
         nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
         serverRunnable = new ServerRunnable();
-
+        pushCountDown = new CountDownTimer(15000, 1000) {
+            @Override
+            public void onTick(long l) {
+            }
+            @Override
+            public void onFinish() {
+                nm.cancel(1);
+            }
+        };
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         return START_STICKY;
     }
+    public class LocalBinder extends Binder{
+        ServerPlayService getService() {
+            // Return this instance of LocalService so clients can call public methods
+            return ServerPlayService.this;
+        }
+    }
+
+    public void setPermissionDeny() {
+        serverRunnable.dropSocketConnection();
+        serverRunnable.setAllowAccept(true);
+        serverRunnable.setCurrentSocket(null);
+    }
+    public void setPermissionAllow() {
+        new test(serverRunnable.getCurrentSocket());
+        serverRunnable.setAllowAccept(true);
+    }
+
     private class ServerRunnable implements Runnable{
         ServerSocket serverSocket;
         Thread thread;
@@ -83,7 +101,6 @@ public class ServerPlayService extends Service {
 
 
         Socket currentSocket;
-
         private void setAllowAccept(boolean allowAccept) {
             this.allowAccept = allowAccept;
         }
@@ -113,41 +130,45 @@ public class ServerPlayService extends Service {
         @Override
         public void run() {
             try {
-                serverSocket = new ServerSocket(19000);
-            }catch (IOException e){
-                e.printStackTrace();
-            }
-            while (!serverSocket.isClosed()) {
-                while (allowAccept) {
-                    try {
+                serverSocket = createServerSocket();
+                while (serverSocket != null && !serverSocket.isClosed()) {
+                    while (allowAccept) {
                         newSocket = serverSocket.accept();
-                        if(currentSocket != null && currentSocket.getInetAddress().equals(newSocket.getInetAddress())) {
+                        if (currentSocket != null && currentSocket.getInetAddress().equals(newSocket.getInetAddress())) {
                             currentSocket = newSocket;
                             new test(currentSocket);
                             this.setAllowAccept(true);
-                        }else {
+                        } else {
                             setAllowAccept(false);
                             currentSocket = newSocket;
                             sendNotification();
-                            pushCountDown = new CountDownTimer(15000, 1000) {
-                                @Override
-                                public void onTick(long l) {
-
-                                }
-
-                                @Override
-                                public void onFinish() {
-                                    nm.cancel(1);
-                                }
-                            }.start();
+//                            Looper.prepare();
+//                            pushCountDown.start();
                         }
-
-                    } catch (IOException e) {
-                        e.printStackTrace();
                     }
                 }
+            } catch (IOException e) {
+                e.printStackTrace();
+
             }
         }
+        void dropSocketConnection(){
+            try {
+                this.newSocket.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        ServerSocket createServerSocket(){
+            ServerSocket serverSocket = null;
+            try {
+                 serverSocket = new ServerSocket(19000);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return serverSocket;
+        }
+
          Socket getCurrentSocket() {
             return currentSocket;
         }

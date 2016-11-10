@@ -81,7 +81,6 @@ public class ClientPlayActivity extends AppCompatActivity {
         }
         albumText.setText(album);
         trackDurationProgressBar.setMax(duration);
-        trackDurationProgressBar.setActivated(false);
         byte[] art = metadataRetriever.getEmbeddedPicture();
         if (art != null){
             Bitmap songImage = BitmapFactory
@@ -113,8 +112,8 @@ public class ClientPlayActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Change play button to pause button
                 playPauseButton.setImageResource(R.drawable.ic_pause);
-
                 mediaPlayer.start();
+                playTimer.start();
                 playPauseButton.setOnClickListener(pauseClick);
 
             }
@@ -127,7 +126,6 @@ public class ClientPlayActivity extends AppCompatActivity {
                 playPauseButton.setImageResource(R.drawable.ic_play);
                 mediaPlayer.pause();
                 playTimer.cancel();
-
                 playPauseButton.setOnClickListener(playClick);
             }
         };

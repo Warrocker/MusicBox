@@ -232,7 +232,6 @@ public class PlayFragment extends Fragment {
                 e.printStackTrace();
                 Toast.makeText(getActivity(), "Невозможно подключиться к устройству", Toast.LENGTH_SHORT).show();
             }
-                Log.e("QWEALL", "truee");
                 try (FileInputStream fileInputStream = new FileInputStream(strings[0]);
                      BufferedOutputStream out = new BufferedOutputStream(socket.getOutputStream())) {
                     byte[] byteArray = new byte[8092];

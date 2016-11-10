@@ -25,10 +25,13 @@
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".ShowFilesActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:theme="@style/Theme.AppCompat"
+            android:label="Choose music file"/>
         <activity
             android:name=".DeviceActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:theme="@style/Theme.AppCompat"
+            android:label="Choose device" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

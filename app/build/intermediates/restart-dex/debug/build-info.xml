@@ -5,36 +5,36 @@
     density="xxhdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="543668563155273"
+    timestamp="191706051252750"
     token="-7971694141747336782"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="643" />
+        duration="924" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="117" />
+        duration="38" />
     <task
         name="verifier"
-        duration="55" />
+        duration="0" />
 
     <artifact
         location="/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_0/classes.dex"
         type="DEX" />
 
     <build
-        timestamp="541830025546846"
-        verifier="FULL_BUILD_REQUESTED" >
+        timestamp="191424791190197"
+        verifier="MANIFEST_FILE_CHANGE" >
         <artifact
             location="/home/warrocker/MBox/MusicBox/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="543668563155273"
+        timestamp="191706051252750"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_0/classes.dex"

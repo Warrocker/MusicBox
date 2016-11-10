@@ -21,6 +21,23 @@ import java.lang.reflect.Method;
 
 public class ConnectionDialog extends DialogFragment {
     boolean bound = false;
+    ServerPlayService serverPlayService;
+    @Override
+    public void onStart() {
+        super.onStart();
+        Intent intent = new Intent(getActivity(), ServerPlayService.class);
+        getActivity().bindService(intent, sConn, Context.BIND_AUTO_CREATE);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if(bound){
+            getActivity().unbindService(sConn);
+            bound = false;
+        }
+    }
+
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -33,38 +50,14 @@ public class ConnectionDialog extends DialogFragment {
         builder.setTitle(title);  // заголовок
         builder.setMessage(message);
         builder.setCancelable(false);
-
-       final ServiceConnection sConn = new ServiceConnection() {
-            public void onServiceConnected(ComponentName name, IBinder binder) {
-                bound = true;
-            }
-
-            public void onServiceDisconnected(ComponentName name) {
-                bound = false;
-            }
-        };
-        if(bound){
-            getActivity().unbindService(sConn);
-        }
         builder.setPositiveButton(connextText, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                Intent intent = new Intent(getActivity(), ServerPlayService.class);
-                intent.putExtra("THREAD_STATUS", true);
-                if(bound){
-                    getActivity().unbindService(sConn);
-                }else{
-                    getActivity().bindService(intent, sConn, Context.BIND_AUTO_CREATE);
-                    getActivity().finish();
-                }
-
-
+                serverPlayService.setPermissionAllow();
             }
         });
         builder.setNegativeButton(cancelText, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                Intent intent = new Intent(getActivity(), ServerPlayService.class);
-                intent.putExtra("THREAD_STATUS", false);
-                getActivity().bindService(intent, sConn, Context.BIND_AUTO_CREATE);
+                serverPlayService.setPermissionDeny();
                 getActivity().finish();
             }
         });
@@ -72,4 +65,15 @@ public class ConnectionDialog extends DialogFragment {
         return builder.create();
 
     }
+    ServiceConnection sConn = new ServiceConnection() {
+        public void onServiceConnected(ComponentName name, IBinder binder) {
+            bound = true;
+            ServerPlayService.LocalBinder localBinder = (ServerPlayService.LocalBinder) binder;
+            serverPlayService = localBinder.getService();
+        }
+
+        public void onServiceDisconnected(ComponentName name) {
+            bound = false;
+        }
+    };
 }

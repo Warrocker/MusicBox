@@ -32,10 +32,12 @@
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name="warrocker.musicbox.ShowFilesActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:label="Choose music file"
+            android:theme="@style/Theme.AppCompat" />
         <activity
             android:name="warrocker.musicbox.DeviceActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar" >
+            android:label="Choose device"
+            android:theme="@style/Theme.AppCompat" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

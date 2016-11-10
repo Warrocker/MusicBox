@@ -42,13 +42,15 @@ public class FilesFragment extends ListFragment {
         super.onActivityCreated(savedInstanceState);
         path = FILES_PREFIX;
         File musicDirectory = new File(path);
-        pathes = musicDirectory.list(
-                new FilenameFilter() {
-                    @Override
-                    public boolean accept(File dir, String name) {
-                        return name.endsWith(".mp3");
-                    }
-                });
+//        pathes = musicDirectory.list(
+//                new FilenameFilter() {
+//                    @Override
+//                    public boolean accept(File dir, String name) {
+//                        return name.endsWith(".MP3");
+//                    }
+//                });
+        pathes = musicDirectory.list();
+        Log.e("QWE", Arrays.toString(pathes));
         for(int i = 0; i<pathes.length; i++){
             trackList.add(i, FILES_PREFIX + pathes[i]);
         }
