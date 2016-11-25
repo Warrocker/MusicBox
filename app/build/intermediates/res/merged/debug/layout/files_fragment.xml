@@ -7,5 +7,5 @@
     <fragment class="warrocker.musicbox.FilesFragment"
         android:id="@+id/activity_show_files"
         android:layout_width="match_parent" android:layout_height="match_parent"
-        tools:layout="@layout/activity_show_files" />
+        tools:layout="@layout/list_view_layout" />
 </LinearLayout>

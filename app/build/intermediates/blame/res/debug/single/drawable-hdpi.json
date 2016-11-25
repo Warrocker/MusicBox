@@ -16,6 +16,10 @@
         "source": "/home/warrocker/MBox/MusicBox/app/src/main/res/drawable-hdpi/ic_play.png"
     },
     {
+        "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_refresh.png",
+        "source": "/home/warrocker/MBox/MusicBox/app/src/main/res/drawable-hdpi/ic_refresh.png"
+    },
+    {
         "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_action_name.png",
         "source": "/home/warrocker/MBox/MusicBox/app/src/main/res/drawable-hdpi/ic_action_name.png"
     }

@@ -1,4 +1,4 @@
-#Thu Nov 10 19:39:52 EET 2016
+#Mon Nov 21 14:17:47 EET 2016
 base.0=/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_bbc5a4e0d6b942171c064b47b765bdeb9fa2600f
 renamed.1=classes.dex
 renamed.0=classes2.dex

@@ -4,6 +4,10 @@
         "source": "/home/warrocker/MBox/MusicBox/app/src/main/res/drawable-mdpi/ic_previous.png"
     },
     {
+        "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_refresh.png",
+        "source": "/home/warrocker/MBox/MusicBox/app/src/main/res/drawable-mdpi/ic_refresh.png"
+    },
+    {
         "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_pause.png",
         "source": "/home/warrocker/MBox/MusicBox/app/src/main/res/drawable-mdpi/ic_pause.png"
     },

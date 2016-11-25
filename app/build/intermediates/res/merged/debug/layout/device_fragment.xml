@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DeviceActivity">
+    tools:context=".device.DeviceActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        />
     <fragment
         android:id="@+id/device_fragment_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        class="warrocker.musicbox.DevicesList"
-        tools:layout="@layout/activity_show_files"/>
+        class="warrocker.musicbox.device.DevicesList"
+        tools:layout="@layout/list_view_layout"/>
 </LinearLayout>

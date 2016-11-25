@@ -3,6 +3,7 @@ package warrocker.musicbox;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.app.FragmentManager;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -16,14 +17,19 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class WirelessConnectionDialog extends DialogFragment {
+    private void initWifiList(){
+        FragmentManager manager = getFragmentManager();
+        WifiList myDialogFragment = new WifiList();
+        myDialogFragment.show(manager, "WifiDialog");
+    }
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         String message = "Вы не подключены к беспроводной локальной сети. Создать новую или подключиться к существующей?";
-        String title = "Не создано подключение";
-        String createText = "Создать";
-        String connextText = "Подключиться";
-        String cancelText = "Отмена";
+        String title = "Wifi is disabled";
+        String createText = "Create AP";
+        String connextText = "Enable Wi-Fi";
+        String cancelText = "Cancel";
 
         final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(title);  // заголовок
@@ -33,7 +39,7 @@ public class WirelessConnectionDialog extends DialogFragment {
             public void onClick(DialogInterface dialog, int id) {
                 WifiManager wifiManager = (WifiManager) getActivity().getSystemService(Context.WIFI_SERVICE);
                 wifiManager.setWifiEnabled(true);
-//                Log.e("QWE", wifiManager.getScanResults().toString());
+                initWifiList();
             }
         });
         builder.setNegativeButton(cancelText, new DialogInterface.OnClickListener() {
@@ -53,9 +59,7 @@ public class WirelessConnectionDialog extends DialogFragment {
                     if (method.getName().equals("setWifiApEnabled")){
                 try {
                     boolean apstatus = (Boolean) method.invoke(wifiManager, accessPointConneсtion,true);
-//                    getActivity().finish();
 
-                    //statusView.setText("Creating a Wi-Fi Network \""+netConfig.SSID+"\"");
                     for (Method isWifiApEnabledmethod: wmMethods)
                     {
                         if (isWifiApEnabledmethod.getName().equals("isWifiApEnabled")){

@@ -80,20 +80,16 @@
         "source": "/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/notification_media_cancel_action.xml"
     },
     {
-        "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/layout/activity_show_files.xml",
-        "source": "/home/warrocker/MBox/MusicBox/app/src/main/res/layout/activity_show_files.xml"
-    },
-    {
         "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/layout/notification_template_media_custom.xml",
         "source": "/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/notification_template_media_custom.xml"
     },
     {
-        "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/layout/notification_template_big_media_narrow_custom.xml",
-        "source": "/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/notification_template_big_media_narrow_custom.xml"
-    },
-    {
         "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/layout/notification_action_tombstone.xml",
         "source": "/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/layout/notification_template_big_media_narrow_custom.xml",
+        "source": "/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/notification_template_big_media_narrow_custom.xml"
     },
     {
         "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/layout/design_navigation_menu_item.xml",
@@ -210,6 +206,10 @@
     {
         "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/layout/notification_media_action.xml",
         "source": "/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/notification_media_action.xml"
+    },
+    {
+        "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/layout/list_view_layout.xml",
+        "source": "/home/warrocker/MBox/MusicBox/app/src/main/res/layout/list_view_layout.xml"
     },
     {
         "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/layout/design_layout_tab_text.xml",

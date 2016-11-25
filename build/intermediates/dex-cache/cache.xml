@@ -61,7 +61,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="aa85870060bc1dfa6f52b2dd9e9ecd57dc0fb157">
+        sha1="baf63b8a30f2221d16f464517b8e43f7c662e45a">
         <dex dex="/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_bbc5a4e0d6b942171c064b47b765bdeb9fa2600f/classes.dex" />
     </item>
     <item
@@ -97,17 +97,8 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="b30dcb98799e69c48151ffa4246cefafc671c81a">
+        sha1="639a6b6cad07cbfe96dbb484e4328d534e7d30d9">
         <dex dex="/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_7a99d7c11d700ab6b7c533fff9050b9aac4fb500/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
-        <dex dex="/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.0.0_5cd54e9b21680696f7731573af81c00335206999/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -135,6 +126,15 @@
         revision="24.0.2"
         sha1="26674000177e45447a0326a6ad84612761199a13">
         <dex dex="/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.0.0_c5aa1420a2d8c702659a5df0e32f0e577c48473c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/warrocker/MBox/MusicBox/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
+        <dex dex="/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.0.0_5cd54e9b21680696f7731573af81c00335206999/classes.dex" />
     </item>
     <item
         is-multidex="true"

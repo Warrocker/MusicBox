@@ -8,15 +8,11 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.ServiceConnection;
-import android.net.wifi.WifiConfiguration;
-import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.annotation.NonNull;
-import android.util.Log;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
+import warrocker.musicbox.services.ServerPlayService;
 
 
 public class ConnectionDialog extends DialogFragment {
@@ -53,6 +49,7 @@ public class ConnectionDialog extends DialogFragment {
         builder.setPositiveButton(connextText, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 serverPlayService.setPermissionAllow();
+                getActivity().finish();
             }
         });
         builder.setNegativeButton(cancelText, new DialogInterface.OnClickListener() {

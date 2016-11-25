@@ -8,7 +8,7 @@
     <fragment class="warrocker.musicbox.FilesFragment"
         android:id="@+id/activity_show_files" android:layout_weight="1"
         android:layout_width="0px" android:layout_height="match_parent"
-        tools:layout="@layout/activity_show_files"
+        tools:layout="@layout/list_view_layout"
         />
     <fragment class="warrocker.musicbox.PlayFragment"
         android:id="@+id/activity_play" android:layout_weight="1"

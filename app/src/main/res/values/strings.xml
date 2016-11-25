@@ -2,4 +2,7 @@
     <string name="app_name">MusicBox</string>
     <string name="cover">cover</string>
     <string name="play_button">Play Button</string>
+    <string name="resfresh">Resfresh</string>
+    <string name="device_activity_label">Choose Device</string>
+    <string name="files_activity_label">Choose music file</string>
 </resources>

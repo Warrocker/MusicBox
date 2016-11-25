@@ -1,6 +1,5 @@
 package warrocker.musicbox;
 
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.MediaMetadataRetriever;
@@ -13,19 +12,14 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
-import static warrocker.musicbox.ServerPlayService.EXTERNAL_TRACK_PATH;
-import static warrocker.musicbox.ServerPlayService.mediaPlayer;
+import static warrocker.musicbox.services.ServerPlayService.EXTERNAL_TRACK_PATH;
+import static warrocker.musicbox.services.ServerPlayService.mediaPlayer;
 
 public class ClientPlayActivity extends AppCompatActivity {
     ImageButton playPauseButton;
     ImageButton previousButton;
     ImageButton nextButton;
-    String trackPath;
-    String targetDevice;
-    static String DEFAULT_TITLE = "Unknown Track";
+    static final String DEFAULT_TITLE = "Unknown Track";
     String title;
     String artist;
     String album;

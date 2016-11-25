@@ -9,28 +9,23 @@ import android.media.MediaMetadataRetriever;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.provider.MediaStore;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.ScrollView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.util.ArrayList;
+
+import warrocker.musicbox.services.ServerPlayService;
 
 
 public class PlayFragment extends Fragment {
@@ -219,6 +214,7 @@ public class PlayFragment extends Fragment {
         @Override
         protected void onPreExecute(){
             playTimer.cancel();
+            progress.cancel();
             progress.setMessage("Загрузка...");
             progress.setIndeterminate(false);
             progress.setCancelable(false);
