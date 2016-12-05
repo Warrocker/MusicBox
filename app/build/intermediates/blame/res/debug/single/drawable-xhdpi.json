@@ -1,26 +1,26 @@
 [
     {
-        "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/drawable-xhdpi/ic_next.png",
-        "source": "/home/warrocker/MBox/MusicBox/app/src/main/res/drawable-xhdpi/ic_next.png"
+        "merged": "/home/warrocker/StudioProjects/MusicBox/app/build/intermediates/res/merged/debug/drawable-xhdpi/ic_play.png",
+        "source": "/home/warrocker/StudioProjects/MusicBox/app/src/main/res/drawable-xhdpi/ic_play.png"
     },
     {
-        "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/drawable-xhdpi/ic_refresh.png",
-        "source": "/home/warrocker/MBox/MusicBox/app/src/main/res/drawable-xhdpi/ic_refresh.png"
+        "merged": "/home/warrocker/StudioProjects/MusicBox/app/build/intermediates/res/merged/debug/drawable-xhdpi/ic_refresh.png",
+        "source": "/home/warrocker/StudioProjects/MusicBox/app/src/main/res/drawable-xhdpi/ic_refresh.png"
     },
     {
-        "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/drawable-xhdpi/ic_pause.png",
-        "source": "/home/warrocker/MBox/MusicBox/app/src/main/res/drawable-xhdpi/ic_pause.png"
+        "merged": "/home/warrocker/StudioProjects/MusicBox/app/build/intermediates/res/merged/debug/drawable-xhdpi/ic_previous.png",
+        "source": "/home/warrocker/StudioProjects/MusicBox/app/src/main/res/drawable-xhdpi/ic_previous.png"
     },
     {
-        "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/drawable-xhdpi/ic_play.png",
-        "source": "/home/warrocker/MBox/MusicBox/app/src/main/res/drawable-xhdpi/ic_play.png"
+        "merged": "/home/warrocker/StudioProjects/MusicBox/app/build/intermediates/res/merged/debug/drawable-xhdpi/ic_action_name.png",
+        "source": "/home/warrocker/StudioProjects/MusicBox/app/src/main/res/drawable-xhdpi/ic_action_name.png"
     },
     {
-        "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/drawable-xhdpi/ic_previous.png",
-        "source": "/home/warrocker/MBox/MusicBox/app/src/main/res/drawable-xhdpi/ic_previous.png"
+        "merged": "/home/warrocker/StudioProjects/MusicBox/app/build/intermediates/res/merged/debug/drawable-xhdpi/ic_pause.png",
+        "source": "/home/warrocker/StudioProjects/MusicBox/app/src/main/res/drawable-xhdpi/ic_pause.png"
     },
     {
-        "merged": "/home/warrocker/MBox/MusicBox/app/build/intermediates/res/merged/debug/drawable-xhdpi/ic_action_name.png",
-        "source": "/home/warrocker/MBox/MusicBox/app/src/main/res/drawable-xhdpi/ic_action_name.png"
+        "merged": "/home/warrocker/StudioProjects/MusicBox/app/build/intermediates/res/merged/debug/drawable-xhdpi/ic_next.png",
+        "source": "/home/warrocker/StudioProjects/MusicBox/app/src/main/res/drawable-xhdpi/ic_next.png"
     }
 ]

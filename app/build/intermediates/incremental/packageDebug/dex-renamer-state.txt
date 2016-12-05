@@ -1,7 +1,7 @@
-#Mon Nov 21 14:17:47 EET 2016
-base.0=/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_bbc5a4e0d6b942171c064b47b765bdeb9fa2600f
-renamed.1=classes.dex
-renamed.0=classes2.dex
-file.1=/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_7a99d7c11d700ab6b7c533fff9050b9aac4fb500/classes.dex
-base.1=/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_7a99d7c11d700ab6b7c533fff9050b9aac4fb500
-file.0=/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_bbc5a4e0d6b942171c064b47b765bdeb9fa2600f/classes.dex
+#Mon Dec 05 15:27:46 EET 2016
+base.0=/home/warrocker/StudioProjects/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_079d3d9718f54d8435e03a7e8fb9366d47fc0fbb
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=/home/warrocker/StudioProjects/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_3e9db44246b0ea8310de31d51503944f99ccf5d8/classes.dex
+base.1=/home/warrocker/StudioProjects/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_3e9db44246b0ea8310de31d51503944f99ccf5d8
+file.0=/home/warrocker/StudioProjects/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_079d3d9718f54d8435e03a7e8fb9366d47fc0fbb/classes.dex

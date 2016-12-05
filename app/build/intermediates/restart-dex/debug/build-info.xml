@@ -5,46 +5,39 @@
     density="xxhdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="342400557433788"
-    token="-7971694141747336782"
+    timestamp="525296226831392"
+    token="-380843522145311039"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="518" />
+        duration="124" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="29" />
+        duration="22" />
     <task
         name="verifier"
         duration="0" />
 
     <artifact
-        location="/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_3/classes.dex"
+        location="/home/warrocker/StudioProjects/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_0/classes.dex"
         type="DEX" />
 
     <build
-        timestamp="341612783818181"
+        timestamp="522261352831756"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/home/warrocker/MBox/MusicBox/app/build/outputs/apk/app-debug.apk"
+            location="/home/warrocker/StudioProjects/MusicBox/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="341946972887360"
+        timestamp="525296226831392"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_0/classes.dex"
-            type="DEX" />
-    </build>
-    <build
-        timestamp="342400557433788"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/home/warrocker/MBox/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_3/classes.dex"
+            location="/home/warrocker/StudioProjects/MusicBox/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_0/classes.dex"
             type="DEX" />
     </build>
 

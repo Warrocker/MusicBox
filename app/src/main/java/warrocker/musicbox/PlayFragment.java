@@ -9,7 +9,6 @@ import android.media.MediaMetadataRetriever;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedOutputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.Socket;
@@ -200,9 +200,10 @@ public class PlayFragment extends Fragment {
             new PlayTask().execute(trackPath, targetDevice, String.valueOf(seekBar.getProgress()));
         }
     };
-    class PlayTask extends AsyncTask<String, Void, Boolean> {
+    class PlayTask extends AsyncTask<String, Integer, Boolean> {
         ProgressDialog progress = new ProgressDialog(getActivity());
         private Socket socket;
+        int fileSize;
 
         //Пишем интовое знчение в поток
         final void writeInt(BufferedOutputStream bufferedOutputStream, int v) throws IOException {
@@ -215,35 +216,53 @@ public class PlayFragment extends Fragment {
         protected void onPreExecute(){
             playTimer.cancel();
             progress.cancel();
-            progress.setMessage("Загрузка...");
-            progress.setIndeterminate(false);
-            progress.setCancelable(false);
+            progress.setTitle("Загрузка...");
+            progress.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+            progress.setIndeterminate(true);
+            progress.setCancelable(true);
             progress.show();
         }
         @Override
         protected Boolean doInBackground(String... strings) {
+            int progressCount = 0;
             try {
                 socket = new Socket(strings[1], 19000);
-            }catch (IOException e){
+            } catch (IOException e) {
                 e.printStackTrace();
                 Toast.makeText(getActivity(), "Невозможно подключиться к устройству", Toast.LENGTH_SHORT).show();
             }
-                try (FileInputStream fileInputStream = new FileInputStream(strings[0]);
-                     BufferedOutputStream out = new BufferedOutputStream(socket.getOutputStream())) {
-                    byte[] byteArray = new byte[8092];
-                    int i;
-                    out.write(ServerPlayService.PLAY_CODE);
-                    writeInt(out, Integer.parseInt(strings[2]));
-                    while ((i = fileInputStream.read(byteArray)) != -1) {
-                        out.write(byteArray, 0, i);
-                    }
-                    return true;
-                } catch (IOException e) {
-                    e.printStackTrace();
-                    Log.e("QWEACC", "false1");
-                    return false;
+            try (FileInputStream fileInputStream = new FileInputStream(strings[0]);
+                 BufferedOutputStream out = new BufferedOutputStream(socket.getOutputStream())) {
+                byte[] byteArray = new byte[8092];
+                int i;
+                out.write(ServerPlayService.PLAY_CODE);
+                writeInt(out, Integer.parseInt(strings[2]));
+                fileSize = (int) (new File(strings[0]).length() / 1024);
+                while ((i = fileInputStream.read(byteArray)) != -1) {
+                    out.write(byteArray, 0, i);
+                    progressCount = progressCount + i;
+                    publishProgress(progressCount);
+                    Thread.sleep(1);
                 }
+                return true;
+            } catch (IOException e) {
+                e.printStackTrace();
+                return false;
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                return false;
+            }
         }
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            super.onProgressUpdate(values);
+            int progressInKbytes = values[0]/1024;
+            progress.setIndeterminate(false);
+            progress.setMax(fileSize);
+            progress.setProgressNumberFormat("%,1d/%,2d KBytes");
+            progress.setProgress(progressInKbytes);
+        }
+
         @Override
         protected void onPostExecute(Boolean aBool) {
             super.onPostExecute(aBool);
